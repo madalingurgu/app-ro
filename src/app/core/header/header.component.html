@@ -1,0 +1,30 @@
+<div class="mb-5 shadow">
+  <mat-toolbar color="primary">
+    <span>
+      <button mat-icon-button routerLink="/">
+        <mat-icon>book</mat-icon>
+      </button>
+    </span>
+    <span class="mr-5">App-Ro</span>
+    <span>
+      <button mat-button routerLinkActive="active" routerLink="/recipes">
+        Products
+      </button>
+    </span>
+    <span>
+      <button mat-button routerLinkActive="active" routerLink="/shopping-list">
+        Orders
+      </button>
+    </span>
+
+    <span class="gmc-align-r"></span>
+    <ng-template [ngIf]="!authService.isAuthentificated()">
+      <button mat-button routerLink="/signup">
+        Register
+      </button>
+      <button mat-button routerLink="/signin">
+        Login
+      </button>
+    </ng-template>
+  </mat-toolbar>
+</div>

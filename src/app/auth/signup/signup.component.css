@@ -1,0 +1,13 @@
+.gmc-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.gmc-full-width {
+  width: 100%;
+}
+
+h3 {
+  color: grey;
+}

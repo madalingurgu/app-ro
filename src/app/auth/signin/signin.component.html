@@ -1,0 +1,19 @@
+<div class="row mt-5">
+
+  <div class="col-sm-6 mx-auto">
+    <h3 class="mb-4">Please Login!</h3>
+
+    <form (ngSubmit)="onSignin(f)" #f="ngForm" class="gmc-form">
+
+      <mat-form-field class="gmc-full-width mb-3">
+        <input type="email" id="email" name="email" matInput placeholder="Mail" required ngModel>
+      </mat-form-field>
+
+      <mat-form-field class="gmc-full-width mb-3">
+        <input type="password" id="password" name="password" matInput placeholder="Password" required ngModel>
+      </mat-form-field>
+
+    <button [disabled]="!f.valid" type="submit" mat-flat-button color="primary">Login</button>
+</form>
+  </div>
+</div>
