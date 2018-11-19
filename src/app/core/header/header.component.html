@@ -1,30 +1,38 @@
 <div class="mb-5 shadow">
   <mat-toolbar color="primary">
-    <span>
-      <button mat-icon-button routerLink="/">
-        <mat-icon>book</mat-icon>
+    <button mat-button routerLink="/">
+      <mat-icon class="mr-2">home</mat-icon>
+      <span class="mr-3">App-Ro</span>
+    </button>
+
+    <span class="fill-remaining-space"></span>
+    <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+      <button mat-button routerLinkActive="active" routerLink="/add-tooling">
+        Add Tooling
       </button>
-    </span>
-    <span class="mr-5">App-Ro</span>
-    <span>
-      <button mat-button routerLinkActive="active" routerLink="/recipes">
-        Products
+      <button mat-button routerLinkActive="active" routerLink="/list-tooling">
+        List Tooling
       </button>
-    </span>
-    <span>
-      <button mat-button routerLinkActive="active" routerLink="/shopping-list">
-        Orders
-      </button>
-    </span>
+    </div>
+    <button
+      mat-button
+      [mat-menu-trigger-for]="menu"
+      fxHide="false"
+      fxHide.gt-sm
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
 
     <span class="gmc-align-r"></span>
-    <ng-template [ngIf]="!authService.isAuthentificated()">
-      <button mat-button routerLink="/signup">
-        Register
-      </button>
-      <button mat-button routerLink="/signin">
-        Login
-      </button>
-    </ng-template>
+    <button mat-button routerLink="/signin">Login</button>
   </mat-toolbar>
+
+  <mat-menu x-position="before" #menu="matMenu">
+    <button mat-menu-item routerLinkActive="active" routerLink="/add-tooling">
+      Add Tooling
+    </button>
+    <button mat-menu-item routerLinkActive="active" routerLink="/list-tooling">
+      List Tooling
+    </button>
+  </mat-menu>
 </div>
